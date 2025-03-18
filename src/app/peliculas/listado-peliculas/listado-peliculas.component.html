@@ -1,0 +1,27 @@
+<app-listado-generico [listado]="peliculas">
+  <ng-container contenido>
+    <div class="contenedir-peliculas">
+      @for (pelicula of peliculas; track $index) {
+      <div class="pelicula-contenedor">
+        <a>
+          @if (pelicula.poster) {
+          <img [src]="pelicula.poster" style="width: 100px; height: 150px;" />
+          } @else {
+          <img src="https://via.placeholder.com/100x150" style="width: 100px; height: 150px;" />
+          }
+        </a>
+        <div>
+          <p>
+            <a>{{ pelicula.titulo }}</a>
+          </p>
+          <div>
+            <a mat-flat-button>Editar</a>
+            <button met-flat-button type="button" color="warn">Borrar</button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </ng-container>
+
+</app-listado-generico>
